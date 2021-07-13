@@ -3,7 +3,7 @@
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         # ...
         echo "==== Installing ZSH ===="
-        apt install zsh
+        sudo apt install zsh
         echo "==== Installing oh my ZSH ===="
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
         echo "==== Setting ZSH as default shell ===="
