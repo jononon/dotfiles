@@ -1,19 +1,17 @@
 #!/bin/sh
 
-echo "==== Installing ZSH ===="
 
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-echo "==== Setting ZSH as default shell ===="
-
-chsh -s $(which zsh)
-
-echo "==== Installing P10K ===="
-
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         # ...
+        echo "==== Installing ZSH ===="
+        apt install zsh
+        echo "==== Installing oh my ZSH ===="
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+        echo "==== Setting ZSH as default shell ===="
+        chsh -s $(which zsh)
+        echo "==== Installing P10K ===="
+        git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
         echo "==== Installing fasd ===="
         sudo add-apt-repository ppa:aacebedo/fasd
         sudo apt-get update
@@ -29,6 +27,14 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
         # Mac OSX
         echo "==== Installing brew ===="
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        echo "==== Installing ZSH ===="
+        brew install zsh
+        echo "==== Installing oh my ZSH ===="
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+        echo "==== Setting ZSH as default shell ===="
+        chsh -s $(which zsh)
+        echo "==== Installing P10K ===="
+        git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
         echo "==== Installing fasd ===="
         brew install fasd
         echo "==== Installing thefuck ===="
