@@ -10,7 +10,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         echo "==== Installing oh my ZSH ===="
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
         echo "==== Setting ZSH as default shell ===="
-        chsh -s $(which zsh)
+        sudo chsh -s $(which zsh) $(whoami)
         echo "==== Installing P10K ===="
         git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
         echo "==== Installing fasd ===="
