@@ -10,7 +10,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         echo "==== Setting ZSH as default shell ===="
         sudo chsh -s $(which zsh) $(whoami)
         echo "==== Installing P10K ===="
-        git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+        git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
         echo "==== Installing fasd ===="
         sudo add-apt-repository ppa:aacebedo/fasd
         sudo apt-get --yes update
@@ -42,7 +42,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
         echo "==== Setting ZSH as default shell ===="
         chsh -s $(which zsh)
         echo "==== Installing P10K ===="
-        git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+        git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
         echo "==== Installing fasd ===="
         brew install fasd
         echo "==== Installing thefuck ===="
