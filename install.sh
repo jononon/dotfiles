@@ -7,8 +7,6 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         sudo apt-get --yes upgrade
         echo "==== Installing ZSH ===="
         sudo apt --yes install zsh
-        echo "==== Installing oh my ZSH ===="
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
         echo "==== Setting ZSH as default shell ===="
         sudo chsh -s $(which zsh) $(whoami)
         echo "==== Installing P10K ===="
@@ -24,14 +22,15 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         echo "==== Installing thefuck ===="
         sudo pip3 install thefuck
 
+        echo "==== Installing oh my ZSH ===="
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
 elif [[ "$OSTYPE" == "darwin"* ]]; then
         # Mac OSX
         echo "==== Installing brew ===="
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
         echo "==== Installing ZSH ===="
         brew install zsh
-        echo "==== Installing oh my ZSH ===="
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
         echo "==== Setting ZSH as default shell ===="
         chsh -s $(which zsh)
         echo "==== Installing P10K ===="
@@ -40,6 +39,10 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
         brew install fasd
         echo "==== Installing thefuck ===="
         brew install thefuck
+
+        
+        echo "==== Installing oh my ZSH ===="
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 # elif [[ "$OSTYPE" == "cygwin" ]]; then
 #         # POSIX compatibility layer and Linux environment emulation for Windows
 # elif [[ "$OSTYPE" == "msys" ]]; then
@@ -59,3 +62,5 @@ cp .jonathan_damico_custom_commands.sh $HOME/.jonathan_damico_custom_commands.sh
 echo "==== Installing p10k config ===="
 cp .p10k.zsh $HOME/.p10k.zsh
 
+
+source ~/.zshrc
