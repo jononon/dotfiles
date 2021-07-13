@@ -31,7 +31,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 
 
         echo "==== Installing oh my ZSH ===="
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc --skip-chsh
 
 elif [[ "$OSTYPE" == "darwin"* ]]; then
         # Mac OSX
@@ -56,7 +56,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
         cp .p10k.zsh $HOME/.p10k.zsh
 
         echo "==== Installing oh my ZSH ===="
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc --skip-chsh
 # elif [[ "$OSTYPE" == "cygwin" ]]; then
 #         # POSIX compatibility layer and Linux environment emulation for Windows
 # elif [[ "$OSTYPE" == "msys" ]]; then
