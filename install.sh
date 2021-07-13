@@ -20,7 +20,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         sudo apt install python3-dev python3-pip python3-setuptools
 
         echo "==== Installing thefuck ===="
-        sudo pip3 install thefuck
+        yes | sudo pip3 install thefuck
 
         echo "==== Installing zshrc ===="
         cp .zshrc $HOME/.zshrc
@@ -31,7 +31,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 
 
         echo "==== Installing oh my ZSH ===="
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc --skip-chsh
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
 
 elif [[ "$OSTYPE" == "darwin"* ]]; then
         # Mac OSX
@@ -56,7 +56,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
         cp .p10k.zsh $HOME/.p10k.zsh
 
         echo "==== Installing oh my ZSH ===="
-        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc --skip-chsh
+        sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --keep-zshrc
 # elif [[ "$OSTYPE" == "cygwin" ]]; then
 #         # POSIX compatibility layer and Linux environment emulation for Windows
 # elif [[ "$OSTYPE" == "msys" ]]; then
