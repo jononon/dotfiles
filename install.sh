@@ -20,7 +20,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         sudo apt install python3-dev python3-pip python3-setuptools
 
         echo "==== Installing thefuck ===="
-        yes | sudo pip3 install thefuck
+        sudo pip3 install thefuck
 
         echo "==== Installing zshrc ===="
         cp .zshrc $HOME/.zshrc
