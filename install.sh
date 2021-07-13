@@ -22,6 +22,14 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         echo "==== Installing thefuck ===="
         sudo pip3 install thefuck
 
+        echo "==== Installing zshrc ===="
+        cp .zshrc $HOME/.zshrc
+        echo "==== Installing custom comands ===="
+        cp .jonathan_damico_custom_commands.sh $HOME/.jonathan_damico_custom_commands.sh
+        echo "==== Installing p10k config ===="
+        cp .p10k.zsh $HOME/.p10k.zsh
+
+
         echo "==== Installing oh my ZSH ===="
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -40,7 +48,13 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
         echo "==== Installing thefuck ===="
         brew install thefuck
 
-        
+        echo "==== Installing zshrc ===="
+        cp .zshrc $HOME/.zshrc
+        echo "==== Installing custom comands ===="
+        cp .jonathan_damico_custom_commands.sh $HOME/.jonathan_damico_custom_commands.sh
+        echo "==== Installing p10k config ===="
+        cp .p10k.zsh $HOME/.p10k.zsh
+
         echo "==== Installing oh my ZSH ===="
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 # elif [[ "$OSTYPE" == "cygwin" ]]; then
@@ -55,12 +69,4 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 #         # Unknown.
 fi
 
-echo "==== Installing zshrc ===="
-cp .zshrc $HOME/.zshrc
-echo "==== Installing custom comands ===="
-cp .jonathan_damico_custom_commands.sh $HOME/.jonathan_damico_custom_commands.sh
-echo "==== Installing p10k config ===="
-cp .p10k.zsh $HOME/.p10k.zsh
 
-
-source ~/.zshrc
