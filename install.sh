@@ -2,8 +2,11 @@
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         # ...
+        echo "==== Apt Upgrade ===="
+        sudo apt-get --yes update
+        sudo apt-get --yes upgrade
         echo "==== Installing ZSH ===="
-        sudo apt install zsh
+        sudo apt --yes install zsh
         echo "==== Installing oh my ZSH ===="
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
         echo "==== Setting ZSH as default shell ===="
@@ -12,8 +15,8 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
         echo "==== Installing fasd ===="
         sudo add-apt-repository ppa:aacebedo/fasd
-        sudo apt-get update
-        sudo apt-get install fasd
+        sudo apt-get --yes update
+        sudo apt-get --yes install fasd
 
         echo "==== Installing Python ===="
         sudo apt install python3-dev python3-pip python3-setuptools
