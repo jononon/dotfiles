@@ -26,6 +26,8 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         cp .zshrc $HOME/.zshrc
         echo "==== Installing custom comands ===="
         cp .jonathan_damico_custom_commands.sh $HOME/.jonathan_damico_custom_commands.sh
+        echo "==== Installing vimrc ===="
+        cp .vimrc $HOME/.vimrc
         echo "==== Installing p10k config ===="
         cp .p10k.zsh $HOME/.p10k.zsh
 
@@ -52,6 +54,9 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
         cp .zshrc $HOME/.zshrc
         echo "==== Installing custom comands ===="
         cp .jonathan_damico_custom_commands.sh $HOME/.jonathan_damico_custom_commands.sh
+        echo "==== Installing vimrc ===="
+        cp .vimrc $HOME/.vimrc
+        
         echo "==== Installing p10k config ===="
         cp .p10k.zsh $HOME/.p10k.zsh
 
