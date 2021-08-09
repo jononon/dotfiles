@@ -9,6 +9,8 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         sudo apt --yes install zsh
         echo "==== Setting ZSH as default shell ===="
         sudo chsh -s $(which zsh) $(whoami)
+        echo "==== Installing vim ===="
+        sudo apt-get --yes install vim 
         echo "==== Installing P10K ===="
         git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
         echo "==== Installing fasd ===="
