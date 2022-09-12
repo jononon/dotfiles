@@ -13,10 +13,8 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         sudo apt-get --yes install vim 
         echo "==== Installing P10K ===="
         git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-        echo "==== Installing fasd ===="
-        sudo add-apt-repository ppa:aacebedo/fasd
-        sudo apt-get --yes update
-        sudo apt-get --yes install fasd
+        echo "==== Installing zoxide ===="
+        curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
 
         echo "==== Installing Python ===="
         sudo apt install python3-dev python3-pip python3-setuptools
@@ -47,8 +45,8 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
         chsh -s $(which zsh)
         echo "==== Installing P10K ===="
         git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-        echo "==== Installing fasd ===="
-        brew install fasd
+        echo "==== Installing zoxide ===="
+        brew install zoxide
         echo "==== Installing thefuck ===="
         brew install thefuck
 
@@ -75,5 +73,3 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 # else
 #         # Unknown.
 fi
-
-

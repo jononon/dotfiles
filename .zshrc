@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -110,21 +110,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Jonathan Damico Custom
 
-export PATH=$PATH:$HOME/bin
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-12.0.1.jdk/Contents/Home
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 eval $(thefuck --alias)
-
-eval "$(fasd --init auto)"
-
-alias a='fasd -a'        # any
-alias s='fasd -si'       # show / search / select
-alias d='fasd -d'        # directory
-alias f='fasd -f'        # file
-alias sd='fasd -sid'     # interactive directory selection
-alias sf='fasd -sif'     # interactive file selection
-alias z='fasd_cd -d'     # cd, same functionality as j in autojump
-alias zz='fasd_cd -d -i' # cd with interactive selection
 
 alias mop='go run ~/go/src/github.com/mop-tracker/mop/cmd/mop/main.go'
 
@@ -134,8 +122,12 @@ alias firebase="`npm config get prefix`/bin/firebase"
 
 alias speedtest="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
 
+eval "$(zoxide init zsh)"
+
 source ~/.jonathan_damico_custom_commands.sh 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 (( ! ${+functions[p10k]} )) || p10k finalize
+
+export PATH=$PATH:/usr/local/go/bin
