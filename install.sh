@@ -17,7 +17,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
 
         echo "==== Installing Python ===="
-        sudo apt install python3-dev python3-pip python3-setuptools
+        sudo apt install python3-dev python3-pip python3-setuptools --yes
 
         echo "==== Installing thefuck ===="
         sudo pip3 install thefuck
